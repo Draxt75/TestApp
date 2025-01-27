@@ -13,6 +13,7 @@ app.add_middleware(
     allow_credentials=True,
     allow_methods=["*"],  # Allows all methods
     allow_headers=["*"],  # Allows all headers
+)
 
 class BlackScholesInput(BaseModel):
     stockPrice: float
@@ -46,3 +47,4 @@ async def black_scholes(input: BlackScholesInput):
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
